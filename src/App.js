@@ -1,11 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
+import TodoList from './pages/TodoList';
 
 function App() {
   return (
     <div className="App">
+      <TodoList />
       <header className="App-header">
-        <div>123</div>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.

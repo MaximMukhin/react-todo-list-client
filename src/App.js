@@ -1,6 +1,6 @@
 import { useRecoilState } from "recoil";
 import "./App.css";
-import TodoList from "./pages/TodoList";
+import TodoList from "./components/views/TodoList/TodoList";
 import {todosState} from './atoms/todos'
 
 function App() {

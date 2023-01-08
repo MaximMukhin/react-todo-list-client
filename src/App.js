@@ -1,7 +1,7 @@
 import { useRecoilState } from "recoil";
 import "./App.css";
 import TodoList from "./components/views/TodoList/TodoList";
-import {todosState} from './atoms/todos'
+import { todosState } from "./atoms/todos";
 
 function App() {
   const [todos, setTodos] = useRecoilState(todosState);

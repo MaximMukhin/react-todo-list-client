@@ -1,11 +1,13 @@
 import './App.css'
+import {TodoPage} from "./components/views/TodoPage";
+
 
 function App() {
 
 
   return (
     <div className="App">
-App
+        <TodoPage/>
     </div>
   )
 }

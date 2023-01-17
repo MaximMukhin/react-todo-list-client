@@ -1,15 +1,12 @@
-import './App.css'
-import {TodoPage} from "./components/views/TodoPage";
-
+import "./App.css";
+import { TodoPage } from "./components/views/TodoPage";
 
 function App() {
-
-
   return (
     <div className="App">
-        <TodoPage/>
+      <TodoPage />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

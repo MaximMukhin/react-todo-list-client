@@ -1,1 +1,2 @@
-export * from './TodoPage';
+export * from "./TodoPage";
+export * from "./TodoRender";

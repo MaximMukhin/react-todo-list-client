@@ -4,7 +4,8 @@ import { useRecoilState } from "recoil";
 import { todosState } from "../../../states";
 import { getTodo } from "../../../api";
 import { TodoRender } from "./TodoRender";
-import {TodoInput} from "./TodoInput";
+import { TodoInput } from "./TodoInput";
+import { TodoAdd } from "./TodoAdd";
 
 export const TodoPage = () => {
   const [todos, setTodos] = useRecoilState(todosState);
@@ -15,7 +16,10 @@ export const TodoPage = () => {
 
   return (
     <Page>
-        <TodoInput/>
+      <div style={{ display: "flex", gap: "8px" }}>
+        <TodoInput />
+        <TodoAdd />
+      </div>
       TODO
       <TodoRender todos={todos} />
     </Page>

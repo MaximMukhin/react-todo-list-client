@@ -3,7 +3,6 @@ import { TextField } from "@mui/material";
 
 export const TodoInput = () => {
   const [todo, setTodo] = useState("");
-  console.log(todo);
   return (
     <div>
       <TextField

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Page } from "../../layout/MainPage";
 import { useRecoilState } from "recoil";
 import { todosState } from "../../../states";
@@ -9,19 +9,35 @@ import { TodoAdd } from "./TodoAdd";
 
 export const TodoPage = () => {
   const [todos, setTodos] = useRecoilState(todosState);
+  const [todo, setTodo] = useState("");
+
+  const handleTodoText = (text: string) => {
+    console.log(text);
+    setTodo(text);
+  };
+
+  const handle = () => {
+    console.log("handleRun");
+  };
 
   useEffect(() => {
-    getTodo().then((todos) => setTodos(todos));
+    getTodo().then((todos) => {
+      if (todos !== undefined) {
+        setTodos(todos);
+      } else {
+        console.log("Сервер не доступен!");
+      }
+    });
   }, []);
 
   return (
     <Page>
       <div style={{ display: "flex", gap: "8px" }}>
-        <TodoInput />
-        <TodoAdd />
+        <TodoInput todoText={handleTodoText} />
+        <TodoAdd todoText={todo} />
       </div>
       TODO
-      <TodoRender todos={todos} />
+      {!!todos.length ? <TodoRender todos={todos} /> : null}
     </Page>
   );
 };

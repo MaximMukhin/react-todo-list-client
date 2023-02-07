@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Page } from "../../layout/MainPage";
 import { useRecoilState } from "recoil";
 import { todosState } from "../../../states";
-import { getTodo } from "../../../api";
+import { getTodos } from "../../../api";
 import { TodoRender } from "./TodoRender";
 import { TodoInput } from "./TodoInput";
 import { TodoAdd } from "./TodoAdd";
@@ -16,12 +16,8 @@ export const TodoPage = () => {
     setTodo(text);
   };
 
-  const handle = () => {
-    console.log("handleRun");
-  };
-
   useEffect(() => {
-    getTodo().then((todos) => {
+    getTodos().then((todos) => {
       if (todos !== undefined) {
         setTodos(todos);
       } else {

@@ -12,7 +12,6 @@ export const TodoPage = () => {
   const [todo, setTodo] = useState("");
 
   const handleTodoText = (text: string) => {
-    console.log(text);
     setTodo(text);
   };
 

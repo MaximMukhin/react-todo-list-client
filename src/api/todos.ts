@@ -31,3 +31,13 @@ export const deleteTodoById = async (id: TodoModel["_id"]) => {
     console.error(`Ошибка ${error}`);
   }
 };
+
+export const updateTodoById = async (id: TodoModel["_id"], todo: {}) => {
+  try {
+    const res = await axios.patch(`${API_HOST}/todos/${id}`, todo);
+    const body = await res.data;
+    console.log(body);
+  } catch (error) {
+    console.error(`Ошибка ${error}`);
+  }
+};

@@ -12,7 +12,7 @@ export const getTodos = async () => {
   }
 };
 
-export const createTodo = async (todo: TodoModel) => {
+export const createTodo = async (todo: Omit<TodoModel, "_id">) => {
   try {
     const res = await axios.post(`${API_HOST}/todos`, todo);
     const body = await res.data;
@@ -22,7 +22,7 @@ export const createTodo = async (todo: TodoModel) => {
   }
 };
 
-export const deleteTodoById = async (id: string) => {
+export const deleteTodoById = async (id: TodoModel["_id"]) => {
   try {
     const res = await axios.delete(`${API_HOST}/todos/${id}`);
     const body = await res.data;

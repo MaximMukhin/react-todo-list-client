@@ -1,7 +1,7 @@
 import React from "react";
 import { TodoModel } from "../../../types";
 import { StyledCard } from "../../styled";
-import { Button } from "@mui/material";
+import { TodoDelete } from "./TodoDelete";
 
 interface TodoRenderProps {
   todos: TodoModel[];
@@ -9,10 +9,6 @@ interface TodoRenderProps {
 
 export const TodoRender: React.FC<TodoRenderProps> = (props) => {
   const { todos } = props;
-
-  const test = (id?: string) => {
-    console.log(id);
-  };
 
   const displayTodo = todos.map((todo, index: number) => (
     <StyledCard key={todo._id}>
@@ -25,13 +21,7 @@ export const TodoRender: React.FC<TodoRenderProps> = (props) => {
         }}
       >
         {`${index + 1}. ${todo.task}`}
-        <Button
-          variant={"outlined"}
-          color={"error"}
-          onClick={() => test(todo._id)}
-        >
-          Удалить
-        </Button>
+        <TodoDelete _id={todo._id} />
       </div>
     </StyledCard>
   ));
